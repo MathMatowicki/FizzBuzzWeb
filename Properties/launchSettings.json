@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PS3": {
+    "FizzBuzzWeb": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
