@@ -1,0 +1,12 @@
+﻿@page
+@model Fizz.Pages.LastFizzModel
+@{
+    ViewData["Title"] = "Last Fizz";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Date storage in session</p>
+@if (Model.Fizz != null)
+{
+    <p>@Model.Fizz.GetResult()</p>
+    <p>@Model.Fizz.Date</p>
+}

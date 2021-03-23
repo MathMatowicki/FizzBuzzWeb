@@ -5,16 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using FizzBuzzWeb.Models;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using Fizz.Models;
 
-namespace FizzBuzzWeb.Pages
+namespace Fizz.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
         [BindProperty]
-        public FizzBuzz FizzBuzz { get; set; }
+        public FizzBuzz Fizz { get; set; }
+        private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -25,15 +26,17 @@ namespace FizzBuzzWeb.Pages
         {
 
         }
-
-            public IActionResult OnPost()
+        public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
+                HttpContext.Session.SetString("SessionFizzValue",
+                      JsonConvert.SerializeObject(Fizz));
+                HttpContext.Session.SetString("SessionDate",
+                       DateTime.Now.ToString());
                 return Page();
             }
-
-            return HtmlEncoder.
+            return Page();
         }
     }
 }

@@ -4,25 +4,26 @@
     ViewData["Title"] = "Home page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome </h1>
 </div>
 
 <form method="post" class="needs-validation" novalidate>
     <div class="row align-items-center">
         <div class="col-sm">
-            <label asp-for="FizzBuzz.Value"></label>
+            <label asp-for="Fizz.Value"></label>
         </div>
 
     </div>
     <div class="form-row align-items-center">
         <div class="col-sm">
-            <input asp-for="FizzBuzz.Value" />
+            <input asp-for="Fizz.Value" />
         </div>
 
     </div>
 
-    <span asp-validation-for="FizzBuzz.Value" class="text-danger"></span>
+    <span asp-validation-for="Fizz.Value" class="text-danger"></span>
     <div class="row align-items-center">
         <div class="col-sm">
             <button class="btn btn-primary" type="submit">Submit</button>
@@ -30,3 +31,8 @@
     </div>
 
 </form>
+
+@if (Model.Fizz != null)
+{
+    <p>@Model.Fizz.GetResult()</p>
+}
