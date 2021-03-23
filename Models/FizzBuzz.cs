@@ -11,7 +11,7 @@ namespace Fizz.Models
         public DateTime Date { get; set; }
         public string GetResult()
         {
-            string result = "Otrzymano: ";
+            string result = "Input: ";
             Date = DateTime.Now;
             if (Value % 3 == 0)
             {
@@ -21,9 +21,9 @@ namespace Fizz.Models
             {
                 result += "Buzz";
             }
-            if (result == "Otrzymano: ")
+            if (result == "Input: ")
             {
-                return "Liczba: " + Convert.ToString(Value) + " nie spełnia kryteriów Fizz / Buzz";
+                return "Number: " + Convert.ToString(Value) + " doesn't match the criteria of Fizz / Buzz";
             }
             return result;
         }
