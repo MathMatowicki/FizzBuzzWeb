@@ -7,6 +7,6 @@
 <p>Date storage in session</p>
 @if (Model.Fizz != null)
 {
-    <p>@Model.Fizz.GetResult()</p>
+    <p>@Model.Fizz.Value @Model.Fizz.GetResult()</p>
     <p>@Model.Fizz.Date</p>
 }
