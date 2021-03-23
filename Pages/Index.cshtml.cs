@@ -32,8 +32,6 @@ namespace Fizz.Pages
             {
                 HttpContext.Session.SetString("SessionFizzValue",
                       JsonConvert.SerializeObject(Fizz));
-                HttpContext.Session.SetString("SessionDate",
-                       DateTime.Now.ToString());
                 return Page();
             }
             return Page();

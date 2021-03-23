@@ -17,7 +17,6 @@ namespace Fizz.Pages
         public void OnGet()
         {
             var SessionFizz = HttpContext.Session.GetString("SessionFizzValue");
-            // var SessionDate = HttpContext.Session;
             if (SessionFizz != null)
             {
                 Fizz = JsonConvert.DeserializeObject<FizzBuzz>(SessionFizz);

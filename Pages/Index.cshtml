@@ -32,7 +32,7 @@
 
 </form>
 
-@if (Model.Fizz != null)
+@if (Model.Fizz != null && ModelState.IsValid)
 {
-    <p>@Model.Fizz.GetResult()</p>
+        <p>@Model.Fizz.GetResult()</p>
 }
