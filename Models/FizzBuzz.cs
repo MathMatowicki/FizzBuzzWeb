@@ -9,6 +9,7 @@ namespace Fizz.Models
         [Required]
         public int Value { get; set; }
         public DateTime Date { get; set; }
+        public string Result { get; set; }
         public string GetResult()
         {
             string result = "Output: ";
@@ -23,8 +24,10 @@ namespace Fizz.Models
             }
             if (result == "Output: ")
             {
+                Result = "Number: " + Convert.ToString(Value) + " doesn't match the criteria of Fizz / Buzz";
                 return "Number: " + Convert.ToString(Value) + " doesn't match the criteria of Fizz / Buzz";
             }
+            Result = result;
             return result;
         }
     }
