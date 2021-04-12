@@ -25,3 +25,7 @@ The application should validate passing data and if encouter an incorrect data s
 Last Search from session:
 
 ![image](https://user-images.githubusercontent.com/38617892/112173654-0bbbba00-8bf6-11eb-8a2d-71e79c6d2a44.png)
+
+Another feature avalible is database connection by EntityFramework. All of the inputs that validate are now saved in db.
+The user can only see the ten newest records. He can edit/delete/see detail of records.
+![image](https://user-images.githubusercontent.com/38617892/114433900-a8a0c000-9bc2-11eb-9df7-c6eee717024d.png)
