@@ -13,7 +13,7 @@ namespace Fizz.Models
         public string Result { get; set; }
         public string GetResult()
         {
-            string result = "Output: ";
+            string result = "";
             Date = DateTime.Now;
             if (Value % 3 == 0)
             {
@@ -23,7 +23,7 @@ namespace Fizz.Models
             {
                 result += "Buzz";
             }
-            if (result == "Output: ")
+            if (result == "")
             {
                 Result = "Number: " + Convert.ToString(Value) + " doesn't match the criteria of Fizz / Buzz";
                 return "Number: " + Convert.ToString(Value) + " doesn't match the criteria of Fizz / Buzz";

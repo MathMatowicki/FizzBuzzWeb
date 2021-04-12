@@ -15,25 +15,30 @@ namespace Fizz.Pages
     {
         [BindProperty]
         public FizzBuzz Fizz { get; set; }
-        private readonly ILogger<IndexModel> _logger;
+        private readonly Fizz.Data.FizzBuzzContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(Fizz.Data.FizzBuzzContext context)
         {
-            _logger = logger;
+            _context = context;
         }
+
 
         public void OnGet()
         {
 
         }
-        public IActionResult OnPost()
+
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                HttpContext.Session.SetString("SessionFizzValue",
-                      JsonConvert.SerializeObject(Fizz));
                 return Page();
             }
+            Fizz.Result = Fizz.GetResult();
+            HttpContext.Session.SetString("SessionFizzValue",
+                  JsonConvert.SerializeObject(Fizz));
+            _context.FizzBuzz.Add(Fizz);
+            await _context.SaveChangesAsync();
             return Page();
         }
     }
