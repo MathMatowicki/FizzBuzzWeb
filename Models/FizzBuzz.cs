@@ -4,6 +4,7 @@ namespace Fizz.Models
 {
     public class FizzBuzz
     {
+        public int Id { get; set; }
         [Display(Name = "Please input integer from range 1-1000")]
         [Range(1, 1000)]
         [Required]
