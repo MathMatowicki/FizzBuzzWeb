@@ -47,7 +47,7 @@ namespace Fizz.Pages_History
             {
                 return Page();
             }
-
+            FizzBuzz.Result = FizzBuzz.GetResult();
             _context.Attach(FizzBuzz).State = EntityState.Modified;
 
             try
