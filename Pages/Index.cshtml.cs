@@ -8,9 +8,11 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using Fizz.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fizz.Pages
 {
+    [AllowAnonymous]
     public class IndexModel : PageModel
     {
         [BindProperty]

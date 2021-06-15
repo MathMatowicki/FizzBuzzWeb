@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Fizz.Data;
 using Fizz.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fizz.Pages_History
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Fizz.Data.FizzBuzzContext _context;
@@ -23,7 +25,7 @@ namespace Fizz.Pages_History
 
         public async Task OnGetAsync()
         {
-            FizzBuzz = await _context.FizzBuzz.OrderByDescending(d => d.Date).Take(10).ToListAsync();
+            FizzBuzz = await _context.FizzBuzz.OrderByDescending(d => d.Date).Take(20).ToListAsync();
         }
     }
 }

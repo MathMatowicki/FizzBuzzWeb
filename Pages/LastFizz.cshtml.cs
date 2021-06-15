@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Fizz.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -10,6 +11,7 @@ using Newtonsoft.Json;
 
 namespace Fizz.Pages
 {
+    [AllowAnonymous]
     public class LastFizzModel : PageModel
     {
         public FizzBuzz Fizz;
