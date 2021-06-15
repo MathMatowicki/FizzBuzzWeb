@@ -37,6 +37,8 @@ namespace Fizz.Pages
                 return Page();
             }
             Fizz.Result = Fizz.GetResult();
+            if (User.Identity.IsAuthenticated) { Fizz.UserID = User.Identity.Name; }
+
             HttpContext.Session.SetString("SessionFizzValue",
                   JsonConvert.SerializeObject(Fizz));
             _context.FizzBuzz.Add(Fizz);

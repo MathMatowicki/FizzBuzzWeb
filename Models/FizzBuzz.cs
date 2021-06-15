@@ -11,6 +11,7 @@ namespace Fizz.Models
         public int Value { get; set; }
         public DateTime Date { get; set; }
         public string Result { get; set; }
+        public string UserID { get; set; }
         public string GetResult()
         {
             string result = "";
